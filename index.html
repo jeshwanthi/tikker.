@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straw Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+        #counter {
+            font-size: 40px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Plastic Straws Used:</p>
+    <div id="counter">0</div>
+    
+    <script>
+        let count = 0;
+        let ratePerSecond = 5000; // Adjust based on actual straw disposal rate
+        
+        function startCounter() {
+            setInterval(() => {
+                count += ratePerSecond;
+                document.getElementById("counter").innerText = count.toLocaleString();
+            }, 1000);
+        }
+        
+        window.onload = function() {
+            setTimeout(startCounter, 5000); // Simulate slide transition to start on 3rd slide
+        };
+    </script>
+</body>
+</html>
